@@ -1,0 +1,164 @@
+.navbar{
+    display : flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    position: relative;
+    margin-left: 7%;;
+    margin-right: 7%;
+    position: relative;
+    transition: all 0.5s ease;
+}
+
+.sticky{
+
+    position: fixed;
+    z-index: 999;
+    height: 80px;
+    margin-top: 0;
+    width: 100%;
+    display : flex;
+    padding-left: 7%;
+    padding-right: 7%;
+    background-color: #fff;
+    justify-content: space-between;
+    box-sizing: border-box;
+    top : 0;
+    left : 0;
+    right: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+}
+
+.leftNav{
+    width: 40%;
+    display : flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.reactlogo{
+    height: 40px;
+    width: 40px;
+}
+
+.search{
+    height: 30px;
+    width: 30px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #ccc;
+    padding: 8px 12px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 250px;
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+.search-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    background: transparent;
+}
+  
+.search {
+    font-size: 20px;
+    color: #555;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+  
+.search:hover {
+    color: #000;
+}
+  
+
+.cartHeading{
+    display: flex;
+    align-items: center;
+}
+.cartHeading p{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+}
+
+.cartHeading .cartlogo{
+    height: 30px;
+    width: 30px;
+}
+
+.rightNav{
+    width: 43%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rightNav ul{
+    display: flex;
+    list-style-type: none;
+    gap : 30px;
+
+}
+
+.rightNav .navlist li a{
+    text-decoration: none;
+    color: black;
+    position: relative;
+}
+
+.rightNav .navlist li a::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px; /* Position the underline */
+  width: 0%; /* Initially hidden */
+  height: 2.4px;
+  background-color: black; /* Underline color */
+  transition: width 0.4s ease-in-out; /* Smooth animation */
+}
+
+.rightNav .navlist li a:hover::after{
+    width: 100%;
+}
+
+.rightNav ul li{
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.rightNav .userimage{
+    height: 40px;
+    width: 40px;
+}
+
+
+.rightNav .loginbutton{
+    padding: 7px 10px;
+    text-decoration: none;
+    background-color: black;
+    border-radius: 5px;
+    z-index: 999;
+    
+}
+
+.rightNav .loginbutton:hover{
+ 
+    background-color: #444444;
+
+    
+}
+
+.rightNav .loginbutton a{
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+   
+}

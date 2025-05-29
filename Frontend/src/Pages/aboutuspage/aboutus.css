@@ -1,0 +1,41 @@
+.aboutus-container {
+  text-align: center;
+  padding: 2rem;
+  margin: 200px 0;
+}
+
+.highlight {
+  color: red;
+}
+
+.icon-row {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 0.5rem 0;
+}
+
+.abouticon {
+  font-size: 2rem;
+  color: #0077ff;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.icon:hover {
+  transform: scale(1.1);
+}
+
+.home-btn {
+  background-color: #28a745;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  font-size: 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+.home-btn:hover {
+  background-color: #218838;
+}

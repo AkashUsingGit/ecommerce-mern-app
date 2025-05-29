@@ -1,0 +1,67 @@
+.hero{
+    box-sizing: border-box;
+    margin-top: 40px;
+}
+
+.tabs{
+    display: flex;
+    background-color :#1f2937
+}
+
+.tabs .mobiles,.fashion{
+    display: flex;
+    margin : 5px;
+    align-items: center;
+    gap: 5px;
+    color: beige;
+    font-weight: bold;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.tabimage{
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+}
+
+.hero .slider{
+    width: 100%;
+    margin: 10px 0 10px 0;
+    /* padding: 10px; */
+    height: 310px;
+    /* background-size: cover; */
+    overflow: hidden;
+    box-sizing: border-box;
+    border-radius: 10px;
+    position: relative;
+    border: 1px solid black;
+    background-position: right;
+
+}
+
+.slider img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.slider .backarrow{
+
+    position: absolute; 
+    top: 40%;
+    font-size: 40px;
+    color: white;
+
+}
+
+.slider .forwardkarrow{
+
+    position: absolute;
+    font-size: 40px;
+    color: white;
+    top: 40%;
+    right: 8px;
+
+}

@@ -1,0 +1,85 @@
+.Loginpage{
+    display: Flex;
+    width : 100%;
+    box-sizing: border-box;
+
+}
+
+.Loginpage .signin{
+    display: flex;
+    gap : 15px;
+    margin-top: 5px;
+    margin-left: 15px;
+    align-items: center;
+}
+
+.Loginpage .signin p{
+    font-size: 21px;
+}
+
+.Loginpage .signin .icon{
+    background-color:royalblue;
+    color: aliceblue;
+    padding: 12px;
+    border-radius: 5px;
+}
+
+
+
+.divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 25px 10px 0 10px;
+}
+
+.line {
+    flex-grow: 1;
+    height: 1.3px;
+    background-color: #eee;
+    
+}
+
+.text {
+    color: #0b0b0b;
+    font-weight: bold;
+    padding: 0 10px;
+}
+
+
+
+
+
+
+.Loginpage .left{
+    width: 50%;
+    height: 600px;
+    margin-top: 25px;
+    margin-left: 60px;
+}
+
+.Loginpage .left img{
+    width: 80%;
+    height: 100%;
+}
+
+/* .Loginpage .right{
+    width : 35%;
+    margin-top: 120px;
+    margin-left: 30px;
+    margin-bottom: 100px;
+    border-radius: 20px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+} */
+
+.Loginpage .right {
+    width: 35%;
+    margin-top: 120px;
+    margin-left: 30px;
+    margin-bottom: 100px;
+    border-radius: 20px;
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1); /* Shift shadow down */
+}
+
+

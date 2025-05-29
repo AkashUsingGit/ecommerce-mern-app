@@ -1,0 +1,223 @@
+.productMain2{
+    width : 100%;
+    display : flex;
+}
+
+.productMain2 .leftDiv{
+    width : 48%;
+    /* border: 2px solid black; */
+    margin-left: 120px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.productMain2 .leftDiv .productborder{
+    width: 100%;
+    /* border: 1px solid black; */
+    border: 1px solid #ddd; /* Light gray border */
+    border-radius: 5px;
+}
+
+.productMain2 .leftDiv .productborder .product{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 97%;
+    margin: 10px auto;
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: aqua;
+}
+
+.leftDiv .productborder .product img{
+    width: 70%;
+}
+
+.productborder .product .buttons{
+    display: flex;
+    gap : 12px;
+}
+
+.productborder .product .buttons .btn1{
+    background-color: black;
+    color: white;
+    padding: 10px;
+    display: flex;
+    gap: 7px;
+    border: 0px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-size: 17px;
+}
+
+.productborder .product .buttons .btn1:hover {
+  background-color: #0056b3;
+}
+
+.btn1.added {
+  background-color: #4caf50; /* Green color for added state */
+  cursor: default; /* Disable hover effect */
+}
+
+.btn1:disabled {
+  cursor: not-allowed;
+}
+
+.productborder .product .buttons .btn2{
+    background-color:royalblue  ;
+    color: white;
+    border: 0px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    padding: 10px;
+}
+
+.productMain2 .leftDiv .productdetail{
+    box-sizing: border-box;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 15px;
+    padding: 15px;
+}
+
+.productMain2 .leftDiv .productdetail h3{
+    font-size: 21px;
+}
+.productMain2 .leftDiv .productdetail p{
+    font-size: 16px;
+    margin-top: 8px;
+}
+
+.productMain2 .leftDiv .productdetail .description2{
+    color: #999;
+}
+
+/* Right Div */
+
+
+.productMain2 .rightDiv{
+    width : 34%;
+    border : 1px solid #ddd;
+    border-radius: 5px;
+    margin-left: 24px;
+    margin-top: 30px;
+
+}
+
+.rightDiv .reviewHeading{
+    margin : 20px 0 0 15px;
+}
+
+.rightDiv .rating{
+    margin : 10px 0 0 15px;
+}
+
+.rightDiv .rating span{
+    font-size: 35px;
+    cursor: pointer;
+}
+
+.rightDiv .ratingform{
+    margin : 30px 0 0 15px;
+    width: 94%;
+    border: 1px solid black;
+    height : 50px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+}
+
+.rightDiv .ratingform input{
+   width : 78%;
+   border: none;
+   outline: none;
+   box-sizing: border-box;
+   padding-left: 5px;
+   height: 90%;
+   margin-left: 15px;
+
+}
+
+.rightDiv .ratingform input::placeholder{
+        font-size: 16px;
+ 
+ }
+
+.rightDiv .ratingform button{
+        box-sizing: border-box;
+        width: 17%;
+        padding: 4px;
+        border: 1px;
+        border-radius: 17px;
+        background-color: hwb(43 35% 5%);
+        font-size: 15px;
+ 
+ }
+
+.goldclass{
+    color: gold;
+}
+
+
+
+
+/* Product Review */
+
+.reviewdivmain{
+    width: 100%;
+    /* background-color: black; */
+    /* border: 2px solid black; */
+    margin-top: 20px;
+}
+
+
+.reviewdivmain .reviewdiv{
+    width: 95%;
+    margin: 25px auto;
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: space-between;
+}
+
+.reviewdivmain .reviewdiv .leftreview{
+    display: flex;
+    gap: 25px;
+}
+
+.reviewdivmain .reviewdiv .leftreview .reviewuser{
+    align-self :normal;
+    color: goldenrod;
+    font-size: 22px;
+}
+
+.reviewdivmain .reviewdiv .leftreview .leftreviewtext .reviewer{
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.reviewdivmain .reviewdiv .leftreview .leftreviewtext .reviewdate{
+    font-size: 13px;
+    font-weight: lighter;
+    display: inline-block;
+}
+
+.reviewdivmain .reviewdiv .leftreview .leftreviewtext .reviewtext{
+    font-size: 17px;
+    font-weight: lighter;
+    margin-top: 16px;
+    color :#666666
+}
+
+.reviewdivmain .reviewdiv .rightreview{
+    display: flex;
+    gap: 2px;
+}
+.reviewdivmain .reviewdiv .rightreview .starrating{
+    color: goldenrod;
+    font-size: 20px;
+}
+

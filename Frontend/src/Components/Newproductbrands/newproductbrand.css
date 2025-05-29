@@ -1,0 +1,122 @@
+.slider-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.swiper{
+    width: 200%;
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.newproduct{
+    height: 270px;
+    margin : 6px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
+    width: 12%;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    position: relative;
+}
+
+.newproduct .productimage{
+    width: 100%;
+    height : 70%;
+    background-color: aqua;
+    padding: 12px;
+    box-sizing: border-box;
+ 
+}
+
+
+.newproduct .productimage img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    margin: 0px auto;
+    transition: transform 0.5s ease;
+}
+
+.newproduct .productimage:hover img{
+    transform: translateY(-5px) scale(1.05);
+    
+}
+
+.newproduct .cartdiv{
+    position: absolute;
+    top: 0;
+    left : 0;
+    background-color: #DEBE5E;
+    width : 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.newproduct .cartdiv .cart{
+    font-size: 20px;
+}
+
+.newproduct .cartdiv:hover{
+  background-color: #9b7d25;
+}
+
+.newproduct .discription{
+    height: 30%;
+    background-color: white;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* border: 2px solid black; */
+}
+
+.newproduct .discription .price{
+    align-self :end;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.newproduct .discription .title{
+
+    margin-top: 10px;
+    margin-left: 12px;
+    color  :dodgerblue;
+   
+}
+
+
+
+.slider-container .backarrow{
+    font-size: 35px;
+    width : 25px;
+    border : 2px solid black;
+    padding : 2px;
+    position: absolute;
+    top : 40%;
+    box-shadow: 0px 0px 7px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    z-index: 10;
+
+
+}
+
+.slider-container .forwardkarrow{
+    font-size: 35px;
+    width : 25px;
+    border : 2px solid black;
+    padding : 2px;
+    position: absolute;
+    top : 40%;
+    right: 0;
+    border-radius: 5px;
+    box-shadow: 0px 0px 7px 10px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
