@@ -16,12 +16,14 @@ const Newproductbrand = ({ category, productType }) => {
     const [newProducts, setnewProducts] = useState()
     const slider = useRef()
     const dispatch = useDispatch()
+    const BASE_URL = import.meta.env.VITE_API_BASE_URL;
+    const BASE_IMAGE_URL = import.meta.env.VITE_API_BASE_IMAGE_URL;
 
     const cart = useSelector((state) => state.cart.items) || [];
 
     const fetchCart = async () => {
         try {
-            const res = await axios.get('http://localhost:4000/api/v1/cart/getCart',
+            const res = await axios.get(`${BASE_URL}/cart/getCart`,
                 {
                     withCredentials: true
                 },
@@ -69,7 +71,7 @@ const Newproductbrand = ({ category, productType }) => {
 
         try {
 
-            const response = await axios.post("http://localhost:4000/api/v1/cart/addToCart",
+            const response = await axios.post(`${BASE_URL}/cart/addToCart`,
                 {
                     productId: id,
                     quantity: 1,
@@ -91,7 +93,7 @@ const Newproductbrand = ({ category, productType }) => {
     async function handleRemove(id) {
         try {
             await axios.delete(
-                `http://localhost:4000/api/v1/cart/removecart/${id}`,
+                `${BASE_URL}/cart/removecart/${id}`,
                 { withCredentials: true }
             );
             toast.error("product removed from cart");
@@ -115,7 +117,7 @@ const Newproductbrand = ({ category, productType }) => {
 
                         <div className="productimage">
                             <img
-                                src={`http://localhost:4000${newproduct.Image}`}
+                                src={`${BASE_IMAGE_URL}${newproduct.Image}`}
                                 alt="productImage"
                             />
                             <div className="cartdiv">

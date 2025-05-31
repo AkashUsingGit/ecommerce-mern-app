@@ -7,11 +7,12 @@ import { toast } from "react-toastify";
 const Register = ({setLogin}) => {
 
     const {register, handleSubmit, reset, formState : {errors}} = useForm()
+    const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
     function onSubmit(userData){
 
     reset()
-    axios.post("http://localhost:4000/api/v1/user/registerUser",
+    axios.post(`${BASE_URL}/user/registerUser`,
         {
             username : userData.username,
             email : userData.email,

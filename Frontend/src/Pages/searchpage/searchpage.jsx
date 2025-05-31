@@ -9,12 +9,14 @@ const SearchPage = () => {
     const [searchproduct, setsearchProduct] = useState()
     const [searchParams] = useSearchParams()
     const query = searchParams.get("q")
+    const BASE_URL = import.meta.env.VITE_API_BASE_URL;
+    const BASE_IMAGE_URL = import.meta.env.VITE_API_BASE_IMAGE_URL;
 
     useEffect(()=>{
 
         const fetchSearchProduct = async () => {
             try {
-                const response = await fetch(`http://localhost:4000/api/v1/product/getSearchproduct?q=${query}`);
+                const response = await fetch(`${BASE_URL}/product/getSearchproduct?q=${query}`);
                 const data = await response.json();
                 setsearchProduct(data.data);
             } catch (error) {
@@ -37,7 +39,7 @@ const SearchPage = () => {
                     return <Link to={`/productdetail/${searchproduct._id}`}  className="oldproduct">
                         
                         <div className='productimage'>
-                            <img src={`http://localhost:4000${searchproduct.Image}`} alt="productImage"></img>
+                            <img src={`${BASE_IMAGE_URL}${searchproduct.Image}`} alt="productImage"></img>
                             <div className='cartdiv'><FaShoppingCart className='cart'/></div>
                         </div>
                         

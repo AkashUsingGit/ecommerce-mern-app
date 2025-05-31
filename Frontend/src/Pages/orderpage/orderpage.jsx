@@ -4,10 +4,12 @@ import "./orderpage.css";
 
 const Orderpage = () => {
     const [orders, setOrders] = useState([]);
+    const BASE_URL = import.meta.env.VITE_API_BASE_URL;
+    const BASE_IMAGE_URL = import.meta.env.VITE_API_BASE_IMAGE_URL;
 
     const fetchOrders = async () => {
         try {
-            const res = await axios.get("http://localhost:4000/api/v1/order/getorder", {
+            const res = await axios.get(`${BASE_URL}/order/getorder`, {
                 withCredentials: true,
             });
             setOrders(res.data.data);
@@ -23,7 +25,7 @@ const Orderpage = () => {
     const deleteOrder = async (orderId) => {
         console.log(orderId)
         try {
-            await axios.delete(`http://localhost:4000/api/v1/order/deleteorder/${orderId}`, {
+            await axios.delete(`${BASE_URL}/order/deleteorder/${orderId}`, {
                 withCredentials: true,
             });
             setOrders((prev) => prev.filter((_, i) => orders[i]._id !== orderId));
@@ -52,7 +54,7 @@ const Orderpage = () => {
                         {order.productDetail.map((product) => (
                             <div className="product-card" key={product._id}>
                                 <img
-                                    src={`http://localhost:4000${product.Image}`}
+                                    src={`${BASE_IMAGE_URL}${product.Image}`}
                                     alt={product.title}
                                     className="product-image"
                                 />

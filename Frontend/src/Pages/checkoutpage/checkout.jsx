@@ -5,6 +5,8 @@ import "./checkout.css";
 
 const CheckoutPage = () => {
 
+   const BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
 
   const cartItems = useSelector((state) => state.cart.items) || [];
   console.log(cartItems)
@@ -32,7 +34,7 @@ const CheckoutPage = () => {
     localStorage.setItem("cartItems",JSON.stringify(cartItems))
 
     try {
-      const res = await axios.post('http://localhost:4000/api/v1/checkout/payment', {
+      const res = await axios.post(`${BASE_URL}/checkout/payment`, {
         items: cartItems,
         address,// not using it in backend
       });

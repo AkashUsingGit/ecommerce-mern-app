@@ -10,13 +10,14 @@ const PaymentSuccess = () => {
   // const orderCart = useSelector((state) => state.cart.items)
   const orderCart = JSON.parse(localStorage.getItem("cartItems"))
   console.log(orderCart)
+  const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
   useEffect(() => {
 
     const order = async () => {
 
       try {
-        const response = await axios.post('http://localhost:4000/api/v1/order/createorder',
+        const response = await axios.post(`${BASE_URL}/order/createorder`,
           {
             items : orderCart,
             address : savedAddress,
@@ -38,7 +39,7 @@ const PaymentSuccess = () => {
     const clearCart = async () => {
 
       try {
-        const response = await axios.delete('http://localhost:4000/api/v1/cart/clearcart',
+        const response = await axios.delete(`${BASE_URL}/cart/clearcart`,
           {
             withCredentials: true,
           }

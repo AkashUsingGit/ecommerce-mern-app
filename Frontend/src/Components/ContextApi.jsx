@@ -8,6 +8,7 @@ export const LoginContextProvider = ({children})=>{
 
     const [loginstate, setLoginstate] = useState(null)
     const [userData, setUserdata] = useState("")
+    const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
     // console.log("Context running")
     
@@ -15,7 +16,7 @@ export const LoginContextProvider = ({children})=>{
     useEffect(() => {
 
         // console.log("use Effect Running")
-        axios.get("http://localhost:4000/api/v1/user/checkAuth", { withCredentials: true }) 
+        axios.get(`${BASE_URL}/user/checkAuth`, { withCredentials: true }) 
         .then((response) => {
             if (response.data.isAuthenticated) {
                 setLoginstate(true);

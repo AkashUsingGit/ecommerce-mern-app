@@ -15,6 +15,7 @@ const UserDropdown = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate()
   const dispatch = useDispatch()
+  const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
@@ -24,7 +25,7 @@ const UserDropdown = () => {
 
   async function handlelogout(){
       try{
-          await axios.get("http://localhost:4000/api/v1/user/logoutUser",
+          await axios.get(`${BASE_URL}/user/logoutUser`,
             {
               withCredentials : true
             }

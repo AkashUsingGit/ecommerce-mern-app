@@ -15,13 +15,15 @@ const FashionPage = () => {
 
     const [product, setProduct] = useState();
     const [mobileProducts, setMobileProducts] = useState();
+    const BASE_URL = import.meta.env.VITE_API_BASE_URL;
+    const BASE_IMAGE_URL = import.meta.env.VITE_API_BASE_IMAGE_URL;
 
     const dispatch = useDispatch()
     const cart = useSelector((state) => state.cart.items) || [];
 
     const fetchCart = async () => {
         try {
-            const res = await axios.get('http://localhost:4000/api/v1/cart/getCart',
+            const res = await axios.get(`${BASE_URL}/cart/getCart`,
                 {
                     withCredentials: true
                 },
@@ -55,7 +57,7 @@ const FashionPage = () => {
 
         try {
 
-            const response = await axios.post("http://localhost:4000/api/v1/cart/addToCart",
+            const response = await axios.post(`${BASE_URL}/cart/addToCart`,
                 {
                     productId: id,
                     quantity: 1,
@@ -77,7 +79,7 @@ const FashionPage = () => {
     async function handleRemove(id) {
         try {
             await axios.delete(
-                `http://localhost:4000/api/v1/cart/removecart/${id}`,
+                `${BASE_URL}/cart/removecart/${id}`,
                 { withCredentials: true }
             );
             toast.error("product removed from cart");
@@ -105,7 +107,7 @@ const FashionPage = () => {
 
                                 <div className='mobileimage'>
                                     {/* {console.log(oldproduct)} */}
-                                    <img className="img" src={`http://localhost:4000${mobileproduct.Image}`} alt="productImage"></img>
+                                    <img className="img" src={`${BASE_IMAGE_URL}${mobileproduct.Image}`} alt="productImage"></img>
                                     <div className='cartdiv'>
                                         {
                                             cart.some((item) => item.productId._id === mobileproduct._id)

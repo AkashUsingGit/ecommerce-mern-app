@@ -19,6 +19,7 @@ const Navbar = () => {
   const [query, setQuery] = useState("")
   const [isSticky, setIsSticky] = useState(false);
   const navigate = useNavigate()
+  
 
 
   useEffect(()=>{

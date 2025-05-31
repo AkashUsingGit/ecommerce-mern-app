@@ -9,12 +9,14 @@ const CartPage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate()
   const cart = useSelector((state) => state.cart.items) || [];
+  const BASE_URL = import.meta.env.VITE_API_BASE_URL;
+  const BASE_IMAGE_URL = import.meta.env.VITE_API_BASE_IMAGE_URL;
 
 
   // Fetch cart from backend and update redux
   const fetchCart = async () => {
     try {
-      const res = await axios.get('http://localhost:4000/api/v1/cart/getCart',
+      const res = await axios.get(`${BASE_URL}/cart/getCart`,
          {
            withCredentials : true
          },
@@ -33,7 +35,7 @@ const CartPage = () => {
   const handleIncrease = async (item) => {
     try {
       await axios.post(
-        'http://localhost:4000/api/v1/cart/addToCart',
+        `${BASE_URL}/cart/addToCart`,
         { productId: item.productId._id, quantity: 1 },
         { withCredentials : true }
       );
@@ -46,7 +48,7 @@ const CartPage = () => {
   const handleDecrease = async (item) => {
     try {
       await axios.put(
-        `http://localhost:4000/api/v1/cart/decreaseQuantity/${item.productId._id}`,
+        `${BASE_URL}/cart/decreaseQuantity/${item.productId._id}`,
         {},
         { withCredentials : true }
       );
@@ -59,7 +61,7 @@ const CartPage = () => {
   const handleRemove = async (item) => {
     try {
       await axios.delete(
-        `http://localhost:4000/api/v1/cart/removecart/${item.productId._id}`,
+        `${BASE_URL}/cart/removecart/${item.productId._id}`,
         { withCredentials : true }
       );
       fetchCart();
@@ -85,7 +87,7 @@ const CartPage = () => {
             {cart.map((item) => (
               <li key={item.productId._id} className="cartpage-item">
                 <img
-                  src={`http://localhost:4000${item.productId.Image}`}
+                  src={`${BASE_IMAGE_URL}${item.productId.Image}`}
                   alt={item.productId.title}
                   className="cartpage-image"
                 />

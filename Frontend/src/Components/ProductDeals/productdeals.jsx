@@ -14,8 +14,9 @@ import { setCart } from '../../redux/slice';
 const Productdeals = ({ category, productType }) => {
 
   const cart = useSelector((state) => state.cart.items) || [];
+  const BASE_URL = import.meta.env.VITE_API_BASE_URL;
+  const BASE_IMAGE_URL = import.meta.env.VITE_API_BASE_IMAGE_URL;
  
-
   const [product, setProduct] = useState();
   const [oldProducts, setOldProducts] = useState();
   const dispatch = useDispatch()
@@ -23,7 +24,7 @@ const Productdeals = ({ category, productType }) => {
 
   const fetchCart = async () => {
     try {
-      const res = await axios.get('http://localhost:4000/api/v1/cart/getCart',
+      const res = await axios.get(`${BASE_URL}/cart/getCart`,
          {
            withCredentials : true
          },
@@ -54,7 +55,7 @@ const Productdeals = ({ category, productType }) => {
 
     try {
 
-      const response = await axios.post("http://localhost:4000/api/v1/cart/addToCart",
+      const response = await axios.post(`${BASE_URL}/cart/addToCart`,
         {
           productId: id,
           quantity: 1, 
@@ -76,7 +77,7 @@ const Productdeals = ({ category, productType }) => {
   async function handleRemove(id){
     try {
       await axios.delete(
-        `http://localhost:4000/api/v1/cart/removecart/${id}`,
+        `${BASE_URL}/cart/removecart/${id}`,
         { withCredentials : true }
       );
       toast.error("product removed from cart");
@@ -95,7 +96,7 @@ const Productdeals = ({ category, productType }) => {
             return <Link to={`/productdetail/${oldproduct._id}`} className="oldproduct">
 
               <div className='productimage'>
-                <img src={`http://localhost:4000${oldproduct.Image}`} alt="productImage"></img>
+                <img src={`${BASE_IMAGE_URL}${oldproduct.Image}`} alt="productImage"></img>
                 <div className='cartdiv' >
                   {
                     cart.some((item)=>item.productId._id === oldproduct._id) 

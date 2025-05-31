@@ -10,11 +10,12 @@ const UserProfile = () => {
 
   const [userProfile, setUserprofile] = useState()
   const navigate = useNavigate({})
+  const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
   useEffect(() => {
     const getUser = async () => {
       try {
-        const userAuth = await axios.get("http://localhost:4000/api/v1/user/checkAuth", {
+        const userAuth = await axios.get(`${BASE_URL}/user/checkAuth`, {
           withCredentials: true
         })
 

@@ -16,10 +16,11 @@ const Login = ({ setLogin }) => {
     const navigate = useNavigate()
     const { register, handleSubmit, reset, formState: { errors } } = useForm()
     const dispatch = useDispatch()
+    const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
     async function onSubmit(userData) {
         try {
-            const response = await axios.post("http://localhost:4000/api/v1/user/loginUser",
+            const response = await axios.post(`${BASE_URL}/user/loginUser`,
                 {
                     email: userData.email,
                     password: userData.password
@@ -42,7 +43,7 @@ const Login = ({ setLogin }) => {
 
     async function checkAuthStatus() {
         try {
-            const { data } = await axios.get("http://localhost:4000/api/v1/user/checkAuth", { withCredentials: true });
+            const { data } = await axios.get(`${BASE_URL}/user/checkAuth`, { withCredentials: true });
             setLoginstate(data.isAuthenticated);
         } catch (error) {
             console.error("Error checking authentication:", error);
@@ -52,7 +53,7 @@ const Login = ({ setLogin }) => {
 
     async function fetchCartFromBackend() {
         try {
-            const res = await axios.get("http://localhost:4000/api/v1/cart/getcart", {
+            const res = await axios.get(`${BASE_URL}/cart/getcart`, {
                 withCredentials: true,
             });
             dispatch(setCart(res.data.items));

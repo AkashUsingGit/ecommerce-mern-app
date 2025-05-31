@@ -20,13 +20,15 @@ const Productdetail = ({ starcount = 5 }) => {
   const [reviews, setReviews] = useState([  ])
   const [isAdded, setIsAdded] = useState(false);
   const dispatch = useDispatch()
+  const BASE_URL = import.meta.env.VITE_API_BASE_URL;
+  const BASE_IMAGE_URL = import.meta.env.VITE_API_BASE_IMAGE_URL;
 
   const { id } = useParams()
 
 
   const fetchCart = async () => {
     try {
-      const res = await axios.get('http://localhost:4000/api/v1/cart/getCart',
+      const res = await axios.get(`${BASE_URL}/cart/getCart`,
          {
            withCredentials : true
          },
@@ -42,7 +44,7 @@ const Productdetail = ({ starcount = 5 }) => {
 
     async function fetchProduct() {
       try {
-        const response = await fetch(`http://localhost:4000/api/v1/product/getProduct/${id}`);
+        const response = await fetch(`${BASE_URL}/product/getProduct/${id}`);
         const data = await response.json();
         setProduct(data.data);
         // console.log(data.message)
@@ -62,7 +64,7 @@ const Productdetail = ({ starcount = 5 }) => {
     e.preventDefault();
     try {
 
-      const response = await axios.post("http://localhost:4000/api/v1/review/createreview",
+      const response = await axios.post(`${BASE_URL}/review/createreview`,
         {
           productId: id,
           reviewText: productreview,
@@ -92,7 +94,7 @@ const Productdetail = ({ starcount = 5 }) => {
     async function getReviews(){
 
       try{
-        const response = await axios.get(`http://localhost:4000/api/v1/review/getreview/${id}`)
+        const response = await axios.get(`${BASE_URL}/review/getreview/${id}`)
 
         setReviews(response.data.data)
 
@@ -112,7 +114,7 @@ const Productdetail = ({ starcount = 5 }) => {
   try {
 
     const response = await axios.post(
-      "http://localhost:4000/api/v1/cart/addToCart",
+      `${BASE_URL}/cart/addToCart`,
       {
         productId: id,
         quantity: 1,
@@ -142,7 +144,7 @@ const Productdetail = ({ starcount = 5 }) => {
             <div className="productborder">
               <div className="product">
 
-                <img src={`http://localhost:4000${product.Image}`} alt="productImage"></img>
+                <img src={`${BASE_IMAGE_URL}${product.Image}`} alt="productImage"></img>
 
                 <div className="buttons">
                   <button className={`btn1 ${isAdded ? 'added' : ''}`}
