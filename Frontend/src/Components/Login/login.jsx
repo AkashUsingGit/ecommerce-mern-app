@@ -26,7 +26,7 @@ const Login = ({ setLogin }) => {
                     password: userData.password
                 },
                 {
-                    withCredentials: true //  This makes sure cookies are sent/received
+                    withCredentials: true
                 }
             )
             setUserdata(response.data.data.user.username)

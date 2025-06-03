@@ -16,8 +16,8 @@ const app = express();
 app.use(cookieParser());
 
 app.use(cors({
-  origin: ["http://localhost:5173", "https://ecommerce-mern-app-alpha.vercel.app"],
-  credentials: true // Allow credentials (cookies, tokens)
+  origin: ["https://ecommerce-mern-app-alpha.vercel.app"],
+  credentials: true 
 }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
