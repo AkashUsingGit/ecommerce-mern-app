@@ -3,18 +3,18 @@
 A responsive, user-friendly e-commerce web application built with **React**, **Vite**, **Node.js**, and **MongoDB**.
 
 ## 🚀 Live Demo
-👉 [Visit Site](https://your-live-site-url.com)
+👉 [Visit Site](https://ecommerce-mern-app-alpha.vercel.app)
 
 ## 📸 Screenshots
-![Home Page](./screenshots/home.png)
-![Cart Page](./screenshots/cart.png)
+![Home Page](./Frontend/src/assets/projectSS.png)
+![Cart Page](./Frontend/src/assets/projectSS2.png)
 
 ## 🔧 Features
 
 - User Authentication (Signup/Login)
 - Product Listings with Filtering & Search
 - Add to Cart, Remove from Cart
-- Persistent Cart (saved in backend)
+- Persistent Cart 
 - Order placement & deletion
 
 
