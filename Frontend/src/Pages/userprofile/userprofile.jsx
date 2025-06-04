@@ -24,7 +24,7 @@ const UserProfile = () => {
           navigate("/login")
           return
         } else if (userAuth.data.isAuthenticated == true) {
-          const user = await axios.get("http://localhost:4000/api/v1/user/getUser", {
+          const user = await axios.get(`${BASE_URL}/user/getUser`, {
             withCredentials: true
           })
           if (user) {

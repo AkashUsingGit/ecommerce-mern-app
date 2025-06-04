@@ -1,6 +1,6 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import "./productdetail.css"
 import { FaCartShopping } from "react-icons/fa6";
 import axios from 'axios';
@@ -9,6 +9,7 @@ import { IoIosStar } from "react-icons/io";
 import { useDispatch } from 'react-redux';
 import { setCart } from '../../redux/slice';
 import { toast } from 'react-toastify';
+import { Navigate } from 'react-router-dom';
 
 
 const Productdetail = ({ starcount = 5 }) => {
@@ -22,6 +23,7 @@ const Productdetail = ({ starcount = 5 }) => {
   const dispatch = useDispatch()
   const BASE_URL = import.meta.env.VITE_API_BASE_URL;
   const BASE_IMAGE_URL = import.meta.env.VITE_API_BASE_IMAGE_URL;
+  const navigate = useNavigate()
 
   const { id } = useParams()
 
@@ -153,7 +155,7 @@ const Productdetail = ({ starcount = 5 }) => {
                           ><FaCartShopping />
                           {isAdded ? '✓ Added' : 'Add to Cart'}
                   </button>
-                  <button className='btn2'>Buy now</button>
+                  <button className='btn2' onClick={()=> navigate("/cart")}>Buy now</button>
                 </div>
               </div>
             </div>
