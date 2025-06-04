@@ -24,8 +24,9 @@ const Checkout = asyncHandler(async (req, res)=>{
       payment_method_types: ["card"],
       line_items,
       mode: "payment",
-      success_url: "http://localhost:5173/success",  // Your React success page
-      cancel_url: "http://localhost:5173/fail",    // Your React cancel page
+      success_url: "https://ecommerce-mern-app-alpha.vercel.app/success",
+      cancel_url: "https://ecommerce-mern-app-alpha.vercel.app/fail",
+
     });
 
     res.json({ url: session.url });
